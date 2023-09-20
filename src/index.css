@@ -42,22 +42,31 @@ body {
 }
 
 /* project css */
-.bill-split {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100vh;
+
+.app {
   width: 90vw;
   max-width: 1100px;
   margin: 0 auto;
 }
 
+.bill-split {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4rem;
+}
+
 /* friends */
 .friends,
-.split-form {
+.split-form,
+.add-friend-form {
   background: rgb(253, 197, 175);
   padding: 1rem 1.5rem;
   border-radius: 20px;
+}
+
+.friends {
+  align-self: start;
 }
 
 /* friend */
@@ -112,4 +121,24 @@ select {
   width: 80%;
   margin: 2rem auto;
   display: block;
+}
+
+/* add friend */
+
+.add-friend-form {
+  width: 31rem;
+  margin-top: -5rem;
+  margin-bottom: 2rem;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.add-friend-btn {
+  margin-top: -2rem;
+  margin-bottom: 2rem;
 }

@@ -17,7 +17,7 @@ const Friend = ({ name, image, balance }) => {
           </p>
         )}
 
-        {balance === 0 && <p className="black" >you and {name} are even</p>}
+        {balance === 0 && <p className="black">you and {name} are even</p>}
       </div>
       <button className="btn">select</button>
     </div>
