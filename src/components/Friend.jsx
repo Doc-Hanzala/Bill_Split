@@ -1,6 +1,9 @@
-const Friend = ({ name, image, balance }) => {
+const Friend = ({ friend, onHandleSelectedFriend, selectedFriend }) => {
+  const { image, name, balance } = friend;
+
+  const isSelected = friend.id === selectedFriend?.id;
   return (
-    <div className="friend">
+    <div className={`friend  ${isSelected ? "shade" : ""} `}>
       <img src={image} alt={name} />
       <div className="details">
         <h2>{name}</h2>
@@ -19,7 +22,9 @@ const Friend = ({ name, image, balance }) => {
 
         {balance === 0 && <p className="black">you and {name} are even</p>}
       </div>
-      <button className="btn">select</button>
+      <button onClick={() => onHandleSelectedFriend(friend)} className="btn">
+        {isSelected ? "close" : "select"}
+      </button>
     </div>
   );
 };

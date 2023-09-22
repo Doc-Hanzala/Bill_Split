@@ -6,13 +6,36 @@ import data from "./data";
 
 function App() {
   const [showAddFriend, setShowAddFriend] = useState(false);
+  const [friendsList, setFriendsList] = useState(data);
+  const [selectedFriend, setSelectedFriend] = useState(null);
+
+  function addFriend(friend) {
+    setFriendsList([...friendsList, friend]);
+    setShowAddFriend(false);
+  }
+
+  function handleSelectedFriend(friend) {
+    setSelectedFriend((curFriend) =>
+      curFriend?.id === friend.id ? null : friend
+    );
+  }
+
   return (
     <div className="app">
       <div className="bill-split">
-        <Friends friends={data} />
-        <SplitForm />
+        <Friends
+          friends={friendsList}
+          onHandleSelectedFriend={handleSelectedFriend}
+          selectedFriend={selectedFriend}
+        />
+        {selectedFriend && <SplitForm selectedFriend={selectedFriend} />}
       </div>
-      {showAddFriend && <AddFriend />}
+      {showAddFriend && (
+        <AddFriend
+          onSetShowAddFriend={setShowAddFriend}
+          onAddFriend={addFriend}
+        />
+      )}
       <button
         onClick={() => setShowAddFriend(!showAddFriend)}
         className="btn add-friend-btn"

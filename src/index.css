@@ -41,6 +41,10 @@ body {
   color: green;
 }
 
+.shade {
+  background: rgb(182, 141, 125);
+}
+
 /* project css */
 
 .app {
@@ -67,6 +71,9 @@ body {
 
 .friends {
   align-self: start;
+  margin-bottom: 8rem;
+  background: none;
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.5);
 }
 
 /* friend */
@@ -78,6 +85,13 @@ body {
   width: 28rem;
   margin-top: 1.5rem;
   text-align: left;
+  transition: all 0.3s;
+  padding: 1rem;
+  border-radius: 20px;
+}
+
+.friend:hover {
+  background: rgb(182, 141, 125);
 }
 
 .details {

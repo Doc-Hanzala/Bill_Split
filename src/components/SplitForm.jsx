@@ -1,7 +1,7 @@
-const SplitForm = () => {
+const SplitForm = ({ selectedFriend }) => {
   return (
     <form className="split-form">
-      <h2>split a bill with friend</h2>
+      <h2>split a bill with {selectedFriend.name}</h2>
       <div className="input">
         <label htmlFor="value">bill value</label>
         <input type="text" id="value" />
@@ -11,14 +11,14 @@ const SplitForm = () => {
         <input type="text" id="expense" />
       </div>
       <div className="input">
-        <label htmlFor="friend">friend's bill</label>
+        <label htmlFor="friend">{selectedFriend.name}'s bill</label>
         <input disabled type="text" id="friend" />
       </div>
       <div className="input">
         <label htmlFor="pay">who is paying the bill</label>
         <select id="pay">
           <option value="you">you</option>
-          <option value="friend">friend</option>
+          <option value="friend">{selectedFriend.name}</option>
         </select>
       </div>
 
