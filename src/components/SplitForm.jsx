@@ -10,7 +10,7 @@ const SplitForm = ({ selectedFriend, onHandleSplitBill }) => {
     e.preventDefault();
 
     if (!bill || !paidByUser) return;
-    onHandleSplitBill(whoIsPaying === "user" ? paidByFriend : -paidByUser);
+    onHandleSplitBill(whoIsPaying === "you" ? friendBill : -paidByUser);
   }
 
   return (
